@@ -1,3 +1,3 @@
-# databases
+# ddatabases
 
-JDBC
+My task was to create a relational database schema
