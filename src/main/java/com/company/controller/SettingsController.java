@@ -13,4 +13,8 @@ public class SettingsController implements com.company.controller.interfaces.Set
     public GeneralDao<Settings, Integer> generalDao() {
         return Objects.requireNonNullElseGet(settingsDao,() -> settingsDao = new SettingsDao());
     }
+
+    public String printColumns(){
+        return String.format("|%3s| %-20s | %-20s |","id","user_id", "home_address_id");
+    }
 }

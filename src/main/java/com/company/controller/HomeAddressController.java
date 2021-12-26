@@ -13,4 +13,9 @@ public class HomeAddressController implements com.company.controller.interfaces.
     public GeneralDao<HomeAddress, Integer> generalDao() {
         return Objects.requireNonNullElseGet(homeAddressDao,() -> homeAddressDao = new HomeAddressDao());
     }
+
+    @Override
+    public String printColumns(){
+        return String.format("|%3s| %-20s | %-20s | %-20s |","id","city_id", "number", "street_id");
+    }
 }

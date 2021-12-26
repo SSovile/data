@@ -13,4 +13,8 @@ public class PositionController implements com.company.controller.interfaces.Pos
     public GeneralDao<Position, Integer> generalDao() {
         return Objects.requireNonNullElseGet(positionDao,() -> positionDao = new PositionDao());
     }
+
+    public String printColumns(){
+        return String.format("|%3s| %-20s | %-20s |","id","length", "width");
+    }
 }

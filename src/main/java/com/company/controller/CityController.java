@@ -13,4 +13,8 @@ public class CityController implements com.company.controller.interfaces.CityCon
     public GeneralDao<City, Integer> generalDao() {
         return Objects.requireNonNullElseGet(cityDao,() -> cityDao = new CityDao());
     }
+    @Override
+    public String printColumns(){
+        return String.format("|%3s| %-20s | %-20s |","id", "name");
+    }
 }

@@ -1,17 +1,41 @@
 package com.company.model.models;
+import javax.persistence.*;
+import java.util.Objects;
 
-import com.company.model.models.annotation.Column;
-import com.company.model.models.annotation.PrimaryKey;
-import com.company.model.models.annotation.Table;
-import lombok.Data;
-
-@Table(name = "city")
-@Data
+@Entity
+@Table(name = "city", schema = "city")
 public class City extends GeneralModel{
-    @PrimaryKey
-    @Column(name = "id")
-    private Integer id;
-
-    @Column(name = "name")
+    private int id;
     private String name;
+
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    @Basic
+    @Column(name = "name")
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name);
+    }
+
+    @Override
+    public String toString() {
+        return String.format("|%3s| %-20s | %-20s |",id,name);
+    }
 }

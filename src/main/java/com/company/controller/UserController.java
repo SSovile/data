@@ -13,4 +13,8 @@ public class UserController implements com.company.controller.interfaces.UserCon
     public GeneralDao<User, Integer> generalDao() {
         return Objects.requireNonNullElseGet(userDao,() -> userDao = new UserDao());
     }
+
+    public String printColumns(){
+        return String.format("|%3s| %-20s |","User_id","home_address_id");
+    }
 }

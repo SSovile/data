@@ -6,6 +6,7 @@ import com.company.model.models.*;
 import com.company.model.models.GeneralModel;
 import java.lang.reflect.Field;
 import java.nio.charset.StandardCharsets;
+import java.sql.Date;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
@@ -162,6 +163,21 @@ public class View implements Printable{
                         break;
                     case "java.lang.Float":
                         field.set(model, Float.parseFloat(consoleInput));
+                        break;
+                    case "com.company.model.models.City":
+                        field.set(model, controllers.get("City").findById(Integer.parseInt(consoleInput)));
+                        break;
+                    case "com.company.model.models.Customer":
+                        field.set(model, controllers.get("Customer").findById(Integer.parseInt(consoleInput)));
+                        break;
+                    case "com.company.model.models.GeneralModel":
+                        field.set(model, controllers.get("GeneralModel").findById(Integer.parseInt(consoleInput)));
+                        break;
+                    case "com.company.model.models.Position":
+                        field.set(model, controllers.get("Position").findById(Integer.parseInt(consoleInput)));
+                        break;
+                    case "java.sql.Date":
+                        field.set(model, Date.valueOf(consoleInput));
                         break;
                     default:
                         break;
