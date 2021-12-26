@@ -13,4 +13,8 @@ public class StreetController implements com.company.controller.interfaces.Stree
     public GeneralDao<Street, Integer> generalDao() {
         return Objects.requireNonNullElseGet(streetDao,() -> streetDao = new streetDao());
     }
+
+    public String printColumns(){
+        return String.format("|%3s| %-20s |","id","name");
+    }
 }

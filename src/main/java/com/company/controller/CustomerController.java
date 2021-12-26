@@ -13,4 +13,8 @@ public class CustomerController implements com.company.controller.interfaces.Cus
     public GeneralDao<Customer, Integer> generalDao() {
         return Objects.requireNonNullElseGet(customerDao,() -> customerDao = new CustomerDao());
     }
+    @Override
+    public String printColumns(){
+        return String.format("|%3s| %-20s | %-20s | %-20s |","id","firstname", "lastname", "email");
+    }
 }

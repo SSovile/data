@@ -13,4 +13,8 @@ public class SmartWatchController implements com.company.controller.interfaces.S
     public GeneralDao<SmartWatch, Integer> generalDao() {
         return Objects.requireNonNullElseGet(smartWatchDao,() -> smartWatchDao = new SmartWatchDao());
     }
+
+    public String printColumns(){
+        return String.format("|%3s| %-20s | %-20s | %-20s | %-20s |","id","model", "Customer_id", "Charge", "user_id");
+    }
 }

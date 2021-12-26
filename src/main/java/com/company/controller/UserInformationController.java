@@ -13,4 +13,8 @@ public class UserInformationController implements com.company.controller.interfa
     public GeneralDao<UserInformation, Integer> generalDao() {
         return Objects.requireNonNullElseGet(userInformationDao,() -> userInformationDao = new UserInformationDao());
     }
+
+    public String printColumns(){
+        return String.format("|%3s| %-20s |","position_id","palpitation");
+    }
 }
