@@ -1,3 +1,5 @@
 # databases
 
-My task was to create a relational database schema
+Task 2 
+
+Create sql requests
